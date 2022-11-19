@@ -1,0 +1,62 @@
+@import '_nullstyle.scss';
+body {
+	background: #000;
+}
+
+.cube {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	animation-name: cube, red;
+	/*можна вказувати через кому для різних значень animation-name*/
+	animation-duration: 2s;
+	/* стиль анімації */
+	animation-timing-function: linear;
+	/* к-ть повторів (1, 2, 3, 4, infinite - безкінечно) */
+	animation-iteration-count: 3;
+	/*normal - починає з початку, доходить до кінця, починає з початку
+	alternate - починає з початку, відбивається від кінця і йде до початку
+	alternate-reverse - починає з кінця, відбивається
+	reverse - починає з кінця*/
+	animation-direction: alternate;
+	/* running - за замовчуванням, анімація йде
+	paused - зупиняє анімацію */
+	animation-play-state: running;
+	/*переходить в початкове положення, можна через кому*/
+	/*animation-name: none;*/
+	/*можна вказувати відємні значення, дозволяє починати з середини циклу, можна через кому*/
+	animation-delay: 2s;
+	/*forwards - по закінченню анімації обєкт не повертається в початкове положення*/
+	animation-fill-mode: forwards;
+	/*універсальний запис*/
+	/*animation: name duration timing-function iteration-count direction delay fill-mode;*/
+	/*запис декількох keyframes в одній анімації*/
+	/*animation: name duration timing-function iteration-count direction delay fill-mode, name2 duration2 timing-function2 iteration-count2 direction2 delay2 fill-mode2;*/
+	/*https://fls.guru/cssanimation.html*/
+}
+
+@keyframes cube {
+	0% {
+		top: 0;
+	}
+	50%{
+		border-radius: 50%;
+	}
+	100% {
+		top: 200px;
+	}
+}
+@keyframes red {
+	0% {
+		background: #fff;
+	}
+	50% {
+		background: yellow;
+	}
+	100% {
+		background: red;
+	}
+}
